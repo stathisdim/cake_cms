@@ -35,7 +35,7 @@ class ArticlesController extends AppController{
 	public function add(){
 
 
-		
+		s
 	}
 
 }
