@@ -2,7 +2,7 @@
 
 <table>
 
-<tr>
+ <tr>
   	<th> Title </th>
   	<th> Created </th>
 </tr>
@@ -28,3 +28,4 @@
 ?>
 
 </table> 
+

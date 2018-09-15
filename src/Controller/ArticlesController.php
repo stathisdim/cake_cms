@@ -35,9 +35,31 @@ class ArticlesController extends AppController{
 	public function add(){
 
 
-		s
+		$article = $this->Articles->newEntity();
+			if ($this->request->is('post')){
+
+			$this->Articles->patchEntity($article, $this->request->getData());
+				if($this->Articles->save($article)){
+
+				$this->Flash->success(__('Your Article has been saved!'));
+				return $this->redirect(['action' => 'index']);
+
+
+			}
+
+			$this->Flash->error(__('Cannot save article! Please try again!!));
+		}
+	 $this->set('article', $article);
+
 	}
 
+
+
+
+
+
 }
+
+
 
 ?>
