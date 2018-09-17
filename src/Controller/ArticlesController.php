@@ -13,7 +13,7 @@ class ArticlesController extends AppController{
         parent::initialize();
 
         $this->loadComponent('Paginator');
-        $this->loadComponent('Flash'); // Include the FlashComponent
+        $this->loadComponent('Flash'); 
     }
 
 
