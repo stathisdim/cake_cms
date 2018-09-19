@@ -50,6 +50,11 @@ class ArticlesController extends AppController{
 
 			$this->Flash->error(__('Cannot save article! Please try again!!'));
 		}
+
+	$tags = $this->Articles->Tags->find('list');
+
+	$this->set('tags', $tags);
+
 	 $this->set('article', $article);
 
 	}
