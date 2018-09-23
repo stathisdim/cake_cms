@@ -74,7 +74,15 @@ class ArticlesController extends AppController{
 
 			}$this->Flash->error(__('Cannot update article!!!'));
 
-		}$this->set('article', $article);
+
+
+		}
+		
+
+		$tags = $this->Articles->Tags->find('list');
+
+		$this->set('tags', $tags);
+		$this->set('article', $article);
 
 	}
 
@@ -93,6 +101,18 @@ class ArticlesController extends AppController{
 
 
 		}
+		}
+
+	public function tags(){
+
+		$tags = $this->request->getParam('pass');
+
+		$articles = $this->Articles->find('tagged', ['tags' => $tags]);
+
+		$this->set([
+			'articles' => $articles, 
+			'tags' => $tags]);
+	
 
 
 
